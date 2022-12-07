@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: e3a6077c8be35624c961c5939dc66cce
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TTN_Legion_Basic
+    second: {fileID: 2100000, guid: d2be93c661b95cb43ba55b03df0e16fa, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: TTN_Legion_Basic(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Legion_Low_Legion_LOD0
+      parentName: TTN_Legion_Basic(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Legion_Low_Legion_LOD3
+      parentName: TTN_Legion_Basic(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_Reference
+      parentName: TTN_Legion_Basic(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_Hips
+      parentName: jo_Reference
+      position: {x: 0, y: 0.27945882, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftUpLeg
+      parentName: jo_Hips
+      position: {x: -0.119682886, y: -0.033705167, z: 0.002022392}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftLeg
+      parentName: jo_LeftUpLeg
+      position: {x: -0.000000007629393, y: -0.11927629, z: 0.0026652229}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftFoot
+      parentName: jo_LeftLeg
+      position: {x: -0.000000007629393, y: -0.069835834, z: -0.034788746}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftToeBase
+      parentName: jo_LeftFoot
+      position: {x: -1.4210849e-17, y: -0.049483664, z: 0.0075871036}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightUpLeg
+      parentName: jo_Hips
+      position: {x: 0.1184499, y: -0.033705167, z: 0.002022392}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightLeg
+      parentName: jo_RightUpLeg
+      position: {x: 0.000000007629393, y: -0.11927629, z: 0.0026652429}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightFoot
+      parentName: jo_RightLeg
+      position: {x: -0, y: -0.069835834, z: -0.034788746}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightToeBase
+      parentName: jo_RightFoot
+      position: {x: 1.4210849e-17, y: -0.049483664, z: 0.007587101}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_Spine
+      parentName: jo_Hips
+      position: {x: 2.485261e-17, y: 0.05994998, z: -0.0039868667}
+      rotation: {x: -0.32763022, y: -0, z: 2.7969396e-16, w: 0.94480604}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftShoulder
+      parentName: jo_Spine
+      position: {x: -0.08774766, y: 0.088154875, z: 0.0028420486}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftArm
+      parentName: jo_LeftShoulder
+      position: {x: -0.06809499, y: -0.002313782, z: 0.00013886449}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftForeArm
+      parentName: jo_LeftArm
+      position: {x: -0.117183, y: 0, z: -0.0068265963}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHand
+      parentName: jo_LeftForeArm
+      position: {x: -0.110054, y: -5.6843415e-17, z: 0.0006457825}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandThumb1
+      parentName: jo_LeftHand
+      position: {x: -0.020117369, y: -0.01519137, z: 0.02085309}
+      rotation: {x: -0.004784256, y: -0.009108615, z: -0.013272822, w: 0.99985904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandThumb2
+      parentName: jo_LeftHandThumb1
+      position: {x: -0.01809552, y: -0.018243069, z: 0.01904214}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandIndex1
+      parentName: jo_LeftHand
+      position: {x: -0.07123091, y: -0.006574706, z: 0.01942057}
+      rotation: {x: 0.000000029802326, y: -0.0038143957, z: -0.0043615154, w: 0.99998325}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandIndex2
+      parentName: jo_LeftHandIndex1
+      position: {x: -0.03163754, y: -0.0042664786, z: 0.0037312456}
+      rotation: {x: 0, y: -0.000005316577, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandRing1
+      parentName: jo_LeftHand
+      position: {x: -0.071475215, y: -0.006574706, z: -0.013801349}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_LeftHandRing2
+      parentName: jo_LeftHandRing1
+      position: {x: -0.033173308, y: -0.0044387206, z: -0.000140255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightShoulder
+      parentName: jo_Spine
+      position: {x: 0.08774766, y: 0.088154875, z: 0.0028420486}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightArm
+      parentName: jo_RightShoulder
+      position: {x: 0.06809499, y: -0.002313782, z: 0.00013886449}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightForeArm
+      parentName: jo_RightArm
+      position: {x: 0.117183, y: 0, z: -0.0068265963}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHand
+      parentName: jo_RightForeArm
+      position: {x: 0.1062113, y: -5.6843415e-17, z: 0.0006457825}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandThumb1
+      parentName: jo_RightHand
+      position: {x: 0.020117369, y: -0.01519137, z: 0.02085309}
+      rotation: {x: -0.004784256, y: 0.009108615, z: 0.013272822, w: 0.99985904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandThumb2
+      parentName: jo_RightHandThumb1
+      position: {x: 0.01809552, y: -0.018243069, z: 0.01904214}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandIndex1
+      parentName: jo_RightHand
+      position: {x: 0.07123091, y: -0.006574706, z: 0.01942057}
+      rotation: {x: 0.000000029802326, y: 0.0038143997, z: 0.004361519, w: 0.99998325}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandIndex2
+      parentName: jo_RightHandIndex1
+      position: {x: 0.03163754, y: -0.0042664786, z: 0.0037312456}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandRing1
+      parentName: jo_RightHand
+      position: {x: 0.071475215, y: -0.006574706, z: -0.013801349}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_RightHandRing2
+      parentName: jo_RightHandRing1
+      position: {x: 0.033173308, y: -0.0044387206, z: -0.000140255}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_Gun
+      parentName: jo_RightHand
+      position: {x: 0.045662545, y: -0.040964067, z: 0.0000000015258789}
+      rotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jo_Head
+      parentName: jo_Spine
+      position: {x: 1.3069509e-16, y: 0.07138922, z: 0.1530947}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: jo_Reference
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
