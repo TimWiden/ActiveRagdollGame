@@ -9,13 +9,14 @@ public class IKFootCopy : MonoBehaviour
     [SerializeField] Transform hip = default;
     [SerializeField] IKFootCopy otherFoot = default;
     [SerializeField] float speed = 1;
-    [SerializeField] float stepDistance = 4;
+    [SerializeField] float stepDistance = 4, sideStepDistance = 2f;
     [SerializeField] float stepLength = 4;
     [SerializeField] float stepHeight = 1;
     [SerializeField] Vector3 footOffset = default;
     float footSpacing;
     Vector3 oldPosition, currentPosition, newPosition;
     Vector3 oldNormal, currentNormal, newNormal;
+    Quaternion currentRotation;
     float lerp;
     Ray groundCheckRay;
 
@@ -44,9 +45,9 @@ public class IKFootCopy : MonoBehaviour
 
             // Checks if the distance between the foot and the hip's center is greater than the stepDistance, if it is then you need to take a new step
             // Also checks if the other foot or this foot is moving or not, if either of them are then don't
-            if (Vector3.Distance(newPosition, hit.point) > stepDistance && !otherFoot.IsMoving() && !IsMoving())
+            if (Vector3.Distance(newPosition, hit.point) > stepDistance && !otherFoot.IsMoving() && !IsMoving()) // Should also add in a side step distance so that it takes steps more frequently if strafing
             {
-                Debug.Log("Setting new foot placement");
+                //Debug.Log("Setting new foot placement");
 
                 // Creates a variable that is defined based on an 'if' condition. If the ray hit position is greater than the newPosition's z-value then set the int to '1', if the statement returns false // the newPosition's z-value is greater, then return -1
                 //Transform.InverseTransformPoint gets the relative local transform from "Transform" to (overload)
@@ -59,7 +60,7 @@ public class IKFootCopy : MonoBehaviour
                 // Set the new normal to the RaycastHit's face normal
                 newNormal = hit.normal;
                 
-                lerp = 0;                
+                lerp = 0;
             }
         }
 
@@ -68,7 +69,7 @@ public class IKFootCopy : MonoBehaviour
         // Move the feet by this amount for taking a new step
         if (lerp < 1)
         {
-            // Moves the foot closer to the new foot position
+            // Moves the foot closer to the new foot position from the previous position
             Vector3 footStepPosition = Vector3.Lerp(oldPosition, newPosition, lerp);
 
             // Sine curve to add an arc to the step. This one controlls the height / raise for the foot during the step
@@ -80,21 +81,26 @@ public class IKFootCopy : MonoBehaviour
 
             // Rotates the foot-transform's normal to that of the RaycastHit's normal.
             currentNormal = Vector3.Lerp(oldNormal, newNormal, lerp);
+            currentRotation = new Quaternion(currentNormal.x, hip.rotation.y, currentNormal.z, Quaternion.identity.w);
 
             // For every iteration increase the lerp variable
             lerp += Time.deltaTime * speed;
         }
         else // If the foot isn't supposed to move to a new position
         {
-            //Debug.Log("old and new position " + oldPosition.ToString() + newPosition.ToString());
+            // If the foot isn't moving then just update the previous position so that it will know once a new position has been calculated
+            // Doesn't actually have to set the old stuff to the new several times since it actually just has to do it once after the new stuff has been calculated
+            // But for now it just sets the old stuff to the new over and over again, might not be very optimised.
             oldPosition = newPosition;
             oldNormal = newNormal;
         }
 
-        transform.position = newPosition;
         // Updates the actual positions to the calculated positions
-        //transform.position = currentPosition;
+        transform.position = currentPosition;
+
+        // Need to set the rotation of the foot to follow the ground's normal direction as well as the rotation of the mech
         transform.up = currentNormal;
+        transform.rotation = currentRotation;
     }
 
     private void OnDrawGizmos()

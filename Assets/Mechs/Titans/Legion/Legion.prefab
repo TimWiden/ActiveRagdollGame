@@ -145,13 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f87b538ccf2e2b4ebba09067fe36d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRightFoot: 0
   terrainLayer:
     serializedVersion: 2
     m_Bits: 8
-  body: {fileID: 8656191565108283288}
+  hip: {fileID: 0}
   otherFoot: {fileID: 1859934242}
   speed: 2.5
   stepDistance: 3
+  sideStepDistance: 2
   stepLength: 3
   stepHeight: 2
   footOffset: {x: 0, y: 1, z: 0}
@@ -347,7 +349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1166151421
 Transform:
   m_ObjectHideFlags: 0
@@ -886,13 +888,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f87b538ccf2e2b4ebba09067fe36d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRightFoot: 0
   terrainLayer:
     serializedVersion: 2
     m_Bits: 8
-  body: {fileID: 5314811963292813335}
+  hip: {fileID: 0}
   otherFoot: {fileID: 761886807}
   speed: 2.5
   stepDistance: 3
+  sideStepDistance: 2
   stepLength: 3
   stepHeight: 2
   footOffset: {x: 0, y: 1, z: 0}
@@ -1120,7 +1124,7 @@ Animator:
   m_GameObject: {fileID: 1020451074796881603}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e3a6077c8be35624c961c5939dc66cce, type: 3}
-  m_Controller: {fileID: 9100000, guid: ccfe6a7452a6c0e469ef894c1fe8088c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d003b22249dca7429e48c1a4bd1aa57, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1450,6 +1454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 7505204243609399165}
 --- !u!1 &1885530521305559854
 GameObject:
@@ -1743,6 +1749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 3776945449048619331}
 --- !u!1 &2056397099236230600
 GameObject:
@@ -2172,6 +2180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4090933254253690292}
 --- !u!1 &3137787920278649450
 GameObject:
@@ -2379,6 +2389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 2771875153017065787}
 --- !u!65 &178776169
 BoxCollider:
@@ -2728,6 +2740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 8167174839374911129}
 --- !u!65 &931741018
 BoxCollider:
@@ -2959,6 +2973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 6497045122402918489}
 --- !u!1 &4043075332222298532
 GameObject:
@@ -3286,6 +3302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 3670499355703391406}
 --- !u!1 &4457112315003107887
 GameObject:
@@ -3558,6 +3576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 1788129889169132409}
 --- !u!1 &4895382490897339777
 GameObject:
@@ -3795,6 +3815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4071961657908517195}
 --- !u!1 &5244951527900835612
 GameObject:
@@ -3969,6 +3991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4150992328904585054}
 --- !u!1 &5374466492284066997
 GameObject:
@@ -4348,6 +4372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 6873258800839052339}
 --- !u!1 &6258802583073529040
 GameObject:
@@ -4522,6 +4548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 8699919337274330855}
 --- !u!1 &6349292393168902780
 GameObject:
@@ -4727,6 +4755,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 7453849497251151473}
 --- !u!1 &6870512412511080811
 GameObject:
@@ -4998,6 +5028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4623581130911427957}
 --- !u!1 &7284084433743320810
 GameObject:
@@ -5008,14 +5040,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7952675930739657808}
-  - component: {fileID: 2124353684}
+  - component: {fileID: 749400906}
   m_Layer: 0
   m_Name: Legion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7952675930739657808
 Transform:
   m_ObjectHideFlags: 0
@@ -5033,7 +5065,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2124353684
+--- !u!114 &749400906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5042,13 +5074,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7284084433743320810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26017546b566fc41be8dade4841dbcd, type: 3}
+  m_Script: {fileID: 11500000, guid: 70e8baee68ac40a4bb019b6026214302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  sprintSpeed: 2
+  anim: {fileID: 823662554}
+  speed: 100
+  sprintSpeed: 4
   strafeSpeed: 0
-  jumpForce: 120
+  jumpForce: 500
   rb: {fileID: 7626614946003168148}
   feet: []
   isGrounded: 0
@@ -5291,6 +5324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4263394759817755376}
 --- !u!1 &7650178367731186289
 GameObject:
@@ -5468,6 +5503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 2660346549379632363}
 --- !u!114 &2118878631
 MonoBehaviour:
@@ -5722,6 +5759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 7611662072534284381}
 --- !u!1 &7800203767903448873
 GameObject:
@@ -5896,6 +5935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 7247538603271847661}
 --- !u!1 &7818112452861060556
 GameObject:
@@ -6012,7 +6053,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2be93c661b95cb43ba55b03df0e16fa, type: 2}
+  - {fileID: 2100000, guid: ad1c5ef82a2c0fc42afc0fc054854ed3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6487,6 +6528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a084fba19b789ae42afa83f7d88e1b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  copyPositionToTarget: 0
+  copyPosition: 0
   targetLimb: {fileID: 4352267254159948986}
 --- !u!1 &9025770026017807446
 GameObject:

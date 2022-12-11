@@ -8,7 +8,18 @@ public class CameraController : MonoBehaviour
     [SerializeField] [Tooltip("How far up you can move the camera up and down")] float yAxisLookLimit = 90;
     public Transform animatedSpine;
 
+    [SerializeField] bool hideCursor;
+
     float xRotation;
+
+    private void Start()
+    {
+        if(hideCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;

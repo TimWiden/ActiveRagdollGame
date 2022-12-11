@@ -22,7 +22,7 @@ public class MechController : MonoBehaviour
 
     void Start()
     {
-        feet = FindObjectsOfType<IsGrounded>();
+        feet = GetComponentsInChildren<IsGrounded>();
 
         ikManager = GetComponent<IKManager>();
     }
@@ -51,15 +51,17 @@ public class MechController : MonoBehaviour
             ragdollCopyAnim.enabled = false;
         }*/
 
-        // Checks if all feet are on the ground or not
-        isGrounded = true; // First it says that all feet are grounded
-        foreach(IsGrounded foot in feet)
+        #region Walking
+
+        // Checks if any of the feet are on the ground or not
+        isGrounded = false; // First it says that all feet aren't grounded
+        foreach (IsGrounded foot in feet)
         {
-            // Now it checks if any of the feet are not grounded. If it turns out any single foot isn't grounded then is changes isGrounded to false
-            if (!foot.footIsGrounded) isGrounded = false;
+            // Now it checks if any of the feet are grounded. If it turns out any single foot is grounded then is changes isGrounded to true
+            if (foot.footIsGrounded) isGrounded = true;
         }
 
-        if(isGrounded)
+        if (isGrounded)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -69,8 +71,21 @@ public class MechController : MonoBehaviour
             {
                 rb.AddForce(moveDir * speed * Time.deltaTime * rbForceMulti, ForceMode.VelocityChange);
             }
+        }
 
-            if(Input.GetKeyDown(KeyCode.Space))
+        #endregion
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // This time it checks if ALL feet are on the ground or not
+            isGrounded = true; // First it says that all feet are grounded
+            foreach (IsGrounded foot in feet)
+            {
+                // Now it checks if any of the feet are not grounded. If it turns out any single foot isn't grounded then is changes isGrounded to false
+                if (!foot.footIsGrounded) isGrounded = false;
+            }
+
+            if (isGrounded)
             {
                 rb.AddForce(rb.transform.up * jumpForce * Time.deltaTime * rbForceMulti, ForceMode.VelocityChange);
             }

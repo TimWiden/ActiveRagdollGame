@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - NoSelfCollisions
-  - PostProcessing
+  - HUDPostProcessing
   - Cockpit
   - 
   - 
