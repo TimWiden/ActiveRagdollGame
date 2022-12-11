@@ -13,12 +13,12 @@ public class IKTest : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKey(KeyCode.G))
+        if(Input.GetKeyDown(KeyCode.G))
         {
             ikManager.CopyLimbOn(false);
             animator.enabled = true;
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.F))
         {
             ikManager.CopyLimbOn(true);
             animator.enabled = false;

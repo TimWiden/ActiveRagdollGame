@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class IKFootCopy : MonoBehaviour
 {
+    [SerializeField] bool isRightFoot;
     [SerializeField] LayerMask terrainLayer = default;
-    [SerializeField] Transform body = default;
+    [SerializeField] Transform hip = default;
     [SerializeField] IKFootCopy otherFoot = default;
     [SerializeField] float speed = 1;
     [SerializeField] float stepDistance = 4;
@@ -21,7 +22,8 @@ public class IKFootCopy : MonoBehaviour
     private void Start()
     {
         // store the original x-spacing between the foot and the body
-        footSpacing = transform.position.x - body.position.x; 
+        footSpacing = Vector3.Distance(new Vector3(transform.position.x, 0, transform.position.z), new Vector3(hip.position.x, 0, hip.position.z));
+        if (!isRightFoot) footSpacing *= -1; // Invert the foot spacing if the this is the left foot 
 
         // The transforms need to be defined as something so set them to the original position
         currentPosition = newPosition = oldPosition = transform.position;
@@ -33,27 +35,37 @@ public class IKFootCopy : MonoBehaviour
     void Update()
     {
         // Creates a reference to a new Ray. The Ray goes from a specific position towards a specified direction.
-        groundCheckRay = new Ray(body.position + new Vector3(footSpacing, 0, 0), Vector3.down); // (body.right * footSpacing)
+        groundCheckRay = new Ray(hip.position + (hip.right * footSpacing), Vector3.down);
+        //Debug.DrawRay(hip.position + (hip.right * footSpacing), Vector3.down, Color.green, 0.1f);
 
         // Checks if a raycast that gets sent down hits the layermask(ground) and then sets that info to the variable 'hit'.
         if (Physics.Raycast(groundCheckRay, out RaycastHit hit, 10, terrainLayer.value))
         {
-            // Checks if the distance between the ------- is greater than the stepDistance, if it is then you need to take a new step
+
+            // Checks if the distance between the foot and the hip's center is greater than the stepDistance, if it is then you need to take a new step
             // Also checks if the other foot or this foot is moving or not, if either of them are then don't
             if (Vector3.Distance(newPosition, hit.point) > stepDistance && !otherFoot.IsMoving() && !IsMoving())
             {
-                // Creates a variable that is defined based on an 'if' condition. If the ray hit position is greater than the newPosition's z-value then set the int to '1', if the statement returns false // the newPosition's z-value is greater, then return -1
-                int direction = body.InverseTransformPoint(hit.point).z > body.InverseTransformPoint(newPosition).z ? 1 : -1;
+                Debug.Log("Setting new foot placement");
 
-                // Set the newPosition to the ray hit position // ------------------------------------------------------------------------------------------------------------------------------------------------------ Not sure entirely why the stepLength is required
-                newPosition = hit.point + (body.forward * stepLength * direction) + footOffset;
+                // Creates a variable that is defined based on an 'if' condition. If the ray hit position is greater than the newPosition's z-value then set the int to '1', if the statement returns false // the newPosition's z-value is greater, then return -1
+                //Transform.InverseTransformPoint gets the relative local transform from "Transform" to (overload)
+                // So hip.InverseTransformPoint(hit.point) returns the hit.point position relative to the hip's transform in the z-axis in local space
+                // If the hit.point (the ray) is in front of the position that the foot is in currently then the direction becomes positive
+                int direction = hip.InverseTransformPoint(hit.point).z > hip.InverseTransformPoint(newPosition).z ? 1 : -1;
+
+                // Set the newPosition for the foot equal to the ray hit position plus the length of a step
+                newPosition = hit.point + (hip.forward * stepLength * direction) + footOffset;
                 // Set the new normal to the RaycastHit's face normal
                 newNormal = hit.normal;
                 
-                lerp = 0;
+                lerp = 0;                
             }
         }
 
+        Debug.DrawLine(newPosition, hit.point, Color.yellow);
+
+        // Move the feet by this amount for taking a new step
         if (lerp < 1)
         {
             // Moves the foot closer to the new foot position
@@ -79,8 +91,9 @@ public class IKFootCopy : MonoBehaviour
             oldNormal = newNormal;
         }
 
+        transform.position = newPosition;
         // Updates the actual positions to the calculated positions
-        transform.position = currentPosition;
+        //transform.position = currentPosition;
         transform.up = currentNormal;
     }
 
@@ -88,7 +101,7 @@ public class IKFootCopy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(newPosition, 0.5f);
-        Gizmos.DrawLine(body.position + (body.right * footSpacing), newPosition);
+        Gizmos.DrawLine(hip.position + (hip.right * footSpacing), newPosition);
     }
 
     public bool IsMoving()

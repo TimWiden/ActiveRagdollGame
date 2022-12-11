@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class MechController : MonoBehaviour
 {
-    Animator animator;
+    [SerializeField] Animator animatorCopyAnim, ragdollCopyAnim;
 
-    public float speed = 100f, sprintSpeed = 4f;
+    public float speed = 20f, sprintSpeedMulti = 2f;
     public float strafeSpeed;
     public float jumpForce = 500f;
-    static float rbForceMulti = 10f;
+    static float rbForceMulti = 1f;
 
     public Rigidbody rb;
+    public Transform movementDirection;
     public IsGrounded[] feet;
     public bool isGrounded;
 
-    IKManager ikManager;
+    [SerializeField] IKManager ikManager;
 
     int horizontalDir, verticalDir;
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-
         feet = FindObjectsOfType<IsGrounded>();
 
         ikManager = GetComponent<IKManager>();
@@ -36,18 +35,21 @@ public class MechController : MonoBehaviour
         horizontalDir = Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A) ? 1 : !Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A) ? -1 : 0;
         verticalDir = Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) ? 1 : !Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S) ? -1 : 0;
 
-        Vector3 moveDir = rb.transform.right * horizontalDir + rb.transform.forward * verticalDir;
+        //Vector3 moveDir = rb.transform.right * horizontalDir + rb.transform.forward * verticalDir;
+        Vector3 moveDir = movementDirection.right * horizontalDir + movementDirection.forward * verticalDir;
 
+        /*
         // If the player is giving movement inputs then turn off the copyLimb for all limbs that move via the inverse kinematics constraints, letting the ik on the ragdoll do the animating instead of the ragdolls fixed animated copy
-        if (moveDir.magnitude > 0)
+        if (moveDir.magnitude > 0 || Input.GetKeyDown(KeyCode.F))
         {
-            Debug.Log(isGrounded);
-            //ikManager.CopyLimbOn(false);
+            ikManager.CopyLimbOn(false);
+            ragdollCopyAnim.enabled = true;
         }
         else
         {
-            //ikManager.CopyLimbOn(true);
-        }
+            ikManager.CopyLimbOn(true);
+            ragdollCopyAnim.enabled = false;
+        }*/
 
         // Checks if all feet are on the ground or not
         isGrounded = true; // First it says that all feet are grounded
@@ -61,7 +63,7 @@ public class MechController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                rb.AddForce(moveDir * sprintSpeed * Time.deltaTime * rbForceMulti, ForceMode.VelocityChange);
+                rb.AddForce(moveDir * speed * sprintSpeedMulti * Time.deltaTime * rbForceMulti, ForceMode.VelocityChange);
             }
             else
             {
@@ -79,7 +81,7 @@ public class MechController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Debug.Log("Attack");
-            animator.Play("SimplePunch");
+            animatorCopyAnim.Play("SimplePunch");
         }
     }
 }

@@ -12,6 +12,7 @@ public class IKManager : MonoBehaviour
         foreach(CopyLimb limb in limbs)
         {
             limb.enabled = state;
+            //Debug.Log(limb.gameObject.name + limb.isActiveAndEnabled);
         }
     }
 }
