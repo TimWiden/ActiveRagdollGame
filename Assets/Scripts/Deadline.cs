@@ -10,6 +10,17 @@ public class Deadline : MonoBehaviour
 
     void Start()
     {
+        int f = 0;
+        do
+        {
+            Debug.Log("Done");
+        }
+        while (f < 5);
+        {
+            Debug.Log("Done " + f);
+            f++;
+        }
+
         for(int i = 0; i < names.Length; i++)
         {
             if (names[i].Contains("A") || names[i].Contains("a"))
