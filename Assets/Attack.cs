@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    public ProjectileWeapon weapon;
+    public ProjectileWeapon leftWeapon, rightWeapon;
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.X))
+        if(Input.GetKey(KeyCode.E))
         {
-            weapon.Attack();
+            // Right side attack
+            rightWeapon.Attack();
+        }
+        
+        if(Input.GetKey(KeyCode.Q))
+        {
+            // Left side attack
+            leftWeapon.Attack();
         }
     }
 }

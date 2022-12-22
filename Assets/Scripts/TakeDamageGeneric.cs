@@ -7,9 +7,9 @@ public class TakeDamageGeneric : MonoBehaviour
     public float health = 100f;
     public bool destroyOnDeath;
 
-    float currentHealth;
+    [HideInInspector] public float currentHealth;
 
-    private void Start()
+    public void Awake()
     {
         currentHealth = health;
     }
@@ -32,5 +32,8 @@ public class TakeDamageGeneric : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Disable the takedamage script
+        GetComponent<TakeDamageGeneric>().enabled = false;
     }
 }

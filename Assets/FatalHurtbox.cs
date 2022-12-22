@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq; // is required to easily combine two arrays into one
 
-public class FatalHurtbox : TakeDamageGeneric
+public class FatalHurtbox : HealthStatTracker
 {
     public override void Die()
     {

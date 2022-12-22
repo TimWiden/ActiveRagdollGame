@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class BreakableJoint : TakeDamageGeneric
+public class BreakableJoint : HealthStatTracker
 {
     public bool isLeg;
     public CopyLimb hip;
@@ -64,7 +64,5 @@ public class BreakableJoint : TakeDamageGeneric
         transform.localScale = scale;
 
         base.Die();
-
-        GetComponent<BreakableJoint>().enabled = false;
     }
 }
