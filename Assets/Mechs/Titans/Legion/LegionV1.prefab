@@ -2249,7 +2249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1821c0005ebef9c49b433f6e73a6e5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1731505431}
+  leftWeapon: {fileID: 1731505431}
+  rightWeapon: {fileID: 0}
 --- !u!1 &1486650765431535555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,6 +3608,8 @@ MonoBehaviour:
   destroyOnDeath: 0
   currentHealth: 0
   bodyPart: {fileID: 1581008188}
+  statAlpha: 0.75
+  deathAlpha: 0.5
   isLeg: 0
   hip: {fileID: 0}
   legRig: {fileID: 0}
@@ -4461,6 +4464,8 @@ MonoBehaviour:
   destroyOnDeath: 0
   currentHealth: 0
   bodyPart: {fileID: 1015567085}
+  statAlpha: 0.75
+  deathAlpha: 0.5
   isLeg: 1
   hip: {fileID: 6160277610288637507}
   legRig: {fileID: 1754413901291438758}
@@ -4975,6 +4980,8 @@ MonoBehaviour:
   destroyOnDeath: 0
   currentHealth: 0
   bodyPart: {fileID: 2024355386}
+  statAlpha: 0.75
+  deathAlpha: 0.5
   isLeg: 0
   hip: {fileID: 0}
   legRig: {fileID: 0}
@@ -5920,6 +5927,8 @@ MonoBehaviour:
   destroyOnDeath: 0
   currentHealth: 0
   bodyPart: {fileID: 1632510718}
+  statAlpha: 0.75
+  deathAlpha: 0.5
   isLeg: 1
   hip: {fileID: 6160277610288637507}
   legRig: {fileID: 1754413901291438758}
@@ -6376,6 +6385,8 @@ MonoBehaviour:
   destroyOnDeath: 0
   currentHealth: 0
   bodyPart: {fileID: 1140898180}
+  statAlpha: 0.75
+  deathAlpha: 0.5
 --- !u!1 &6457232373671364922
 GameObject:
   m_ObjectHideFlags: 0
