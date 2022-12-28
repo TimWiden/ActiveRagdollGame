@@ -16,6 +16,6 @@ public class KineticMelee : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.impulse);
+        Debug.Log(collision.impulse.magnitude);
     }
 }

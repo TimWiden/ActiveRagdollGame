@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class RagdollManager : MonoBehaviour
 {
-    public float angularDriveMulti = 1, drag = 0.1f, massMulti = 1;
+    public float angularDriveMulti = 1, dragMulti = 0.1f, massMulti = 1;
 
     [SerializeField] bool updateJoints = false;
 
     ConfigurableJoint[] ragdollJoints;
-
-    public ConfigurableJoint[] leftArmJoints, rightArmJoints, leftLegJoints, rightLegJoints;
 
     private void Start()
     {
@@ -30,18 +28,60 @@ public class RagdollManager : MonoBehaviour
         if (updateJoints) UpdateJoints();
     }
 
+
     // A function that temporarily increases the tention in specified joints (like when a muscle is being used compared to it being idle and relaxed)
-    public void JointFlex(float flex, float flexSpeed)
+    public void JointFlex(float flex, float flexSpeed, BreakableJoint rootJoint)
     {
+        // checks if the flex speed is set to 0 or less, if it is then the loop will continue forever
+        if(flexSpeed <= 0)
+        {
+            Debug.LogError("Invalid float set. Flex speed set to 0 or negative. Infinite while loop would occur");
+            return; // Cancel the function
+        }
+
         float lerp = 0;
 
-        while(lerp <= 1)
+        ConfigurableJoint[] joints = rootJoint.GetComponentsInChildren<ConfigurableJoint>();
+
+        // Calculate how much the joint is tensioned compared to the original non-tensioned values
+        // Taken by calculating the original mass (original mass * multiplier)
+        // The difference (delta) mass
+        float oldTension = rootJoint.GetComponent<Rigidbody>().mass / (rootJoint.GetComponent<RagdollJoint>().originalMass * massMulti);
+
+        while (lerp <= 1) // Only issue is that the exact value of the flex input is never reached. Most problematic when the joints are being reset (flex = 1) cause then the flex value always lands on something like 1.035
         {
+            float currentFlex = Mathf.Lerp(oldTension, flex, lerp);
+
+            Debug.Log("the current flex is "  + currentFlex + ". The Current lerp is " + lerp);
+
+            // Updates all of the joints in the affected joint array to lerp between the original non-tensioned values and the max-tensioned values
+            foreach (ConfigurableJoint joint in joints)
+            {
+                // Reference to the joint's original settings that are saved
+                RagdollJoint originalJoint = joint.GetComponent<RagdollJoint>();
+
+                // You have to change the angular drive via a refering variable since you cannot directly modify it
+                JointDrive jointDrive = new();
+                jointDrive.maximumForce = originalJoint.originalJointMaxForce;
+                jointDrive.positionSpring = angularDriveMulti * originalJoint.originalJointSpring * currentFlex;
+
+                //Debug.Log(originalJoint.gameObject.name + " " + (angularDriveMulti * originalJoint.originalJointSpring * currentFlex));
+
+                joint.angularXDrive = jointDrive;
+                joint.angularYZDrive = jointDrive;
 
 
-            lerp += flexSpeed;
+                // Rigidbody modifications
+                Rigidbody jointRB = joint.GetComponent<Rigidbody>();
+
+                //jointRB.drag = originalJoint.originalDrag * dragMulti; // Don't need to alter the drag when tensing the muscle
+                jointRB.mass = originalJoint.originalMass * massMulti * currentFlex;     
+            }
+
+            lerp += flexSpeed * Time.deltaTime;
         }
     }
+
 
     void UpdateJoints()
     {
@@ -54,9 +94,10 @@ public class RagdollManager : MonoBehaviour
             // Reference to the joint's original settings that are saved
             RagdollJoint originalJoint = joint.GetComponent<RagdollJoint>();
 
-            // You have to change the angular drive via a refering variable since you cannot directly modify it -------------------------------------------------------------------------------------------------------
-            JointDrive jointDrive = new JointDrive();
-            jointDrive.positionSpring = angularDriveMulti * originalJoint.originalJointVal;
+            // You have to change the angular drive via a refering variable since you cannot directly modify it
+            JointDrive jointDrive = new();
+            jointDrive.maximumForce = originalJoint.originalJointMaxForce;
+            jointDrive.positionSpring = angularDriveMulti * originalJoint.originalJointSpring;
 
             joint.angularXDrive = jointDrive;
             joint.angularYZDrive = jointDrive;
@@ -65,7 +106,7 @@ public class RagdollManager : MonoBehaviour
             // Rigidbody modifications
             Rigidbody jointRB = joint.GetComponent<Rigidbody>();
 
-            jointRB.drag = originalJoint.originalDrag * drag;
+            jointRB.drag = originalJoint.originalDrag * dragMulti;
             jointRB.mass = originalJoint.originalMass * massMulti;
         }
     }

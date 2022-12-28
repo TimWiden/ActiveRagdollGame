@@ -95,7 +95,7 @@ public class MechController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("Attack");
+            //Debug.Log("Attack");
             animatorCopyAnim.Play("SimplePunch");
         }
 

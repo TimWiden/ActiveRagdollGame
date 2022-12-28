@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class RagdollJoint : MonoBehaviour
 {
-    public float originalJointVal, originalMass, originalDrag;
+    public float originalJointSpring, originalJointMaxForce, originalMass, originalDrag;
 
     public ConfigurableJoint originalJoint;
 
     private void Awake()
     {
         originalJoint = GetComponent<ConfigurableJoint>();
-        originalJointVal = originalJoint.angularXDrive.positionSpring;
+        originalJointMaxForce = originalJoint.angularXDrive.maximumForce;
+        originalJointSpring = originalJoint.angularXDrive.positionSpring;
 
         Rigidbody rb = GetComponent<Rigidbody>();
         originalMass = rb.mass;
