@@ -38,13 +38,13 @@ public class BreakableJoint : HealthStatTracker
         }
 
         Vector3 scale = transform.lossyScale;
-        Debug.Log(transform.lossyScale + " + " + transform.localScale);
+        //Debug.Log(transform.lossyScale + " + " + transform.localScale);
 
         // Unparent this part of the mech so it falls off
         transform.parent = null;
 
 
-        Debug.Log(transform.localScale);
+        //Debug.Log(transform.localScale);
 
 
         ConfigurableJoint[] childJoints = GetComponentsInChildren<ConfigurableJoint>();

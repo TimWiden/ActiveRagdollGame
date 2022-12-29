@@ -52,7 +52,7 @@ public class RagdollManager : MonoBehaviour
         {
             float currentFlex = Mathf.Lerp(oldTension, flex, lerp);
 
-            Debug.Log("the current flex is "  + currentFlex + ". The Current lerp is " + lerp);
+            //Debug.Log("the current flex is "  + currentFlex + ". The Current lerp is " + lerp);
 
             // Updates all of the joints in the affected joint array to lerp between the original non-tensioned values and the max-tensioned values
             foreach (ConfigurableJoint joint in joints)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MechController : MonoBehaviour
 {
-    [SerializeField] Animator animatorCopyAnim, ragdollCopyAnim;
+    [SerializeField] Animator ragdollCopyAnim;
 
     public float speed = 20f, sprintSpeedMulti = 2f;
     public float strafeSpeed;
@@ -92,17 +92,5 @@ public class MechController : MonoBehaviour
         }
 
         #endregion
-
-        if (Input.GetMouseButton(0))
-        {
-            //Debug.Log("Attack");
-            animatorCopyAnim.Play("SimplePunch");
-        }
-
-        if (Input.GetMouseButton(2))
-        {
-            Debug.Log("Attack 2");
-            animatorCopyAnim.Play("HardPunch");
-        }
     }
 }
