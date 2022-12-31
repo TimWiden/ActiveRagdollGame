@@ -8,10 +8,13 @@ using UnityEngine.UI;
 public class HealthStatTracker : TakeDamageGeneric
 {
     public Image bodyPart;
-    [Range(0, 1)] public float statAlpha = 0.75f, deathAlpha = 0.5f;
+    
+    [Range(0, 1)] public float statAlpha = 0.75f, deathAlpha = 0.3f;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+
         // Resets the color of the HUD element body part to green
         bodyPart.color = new Color(0, 255, bodyPart.color.b);
     }
@@ -29,7 +32,10 @@ public class HealthStatTracker : TakeDamageGeneric
             float healthChange = Mathf.Clamp(currentHealth / health, 0, 1);
             // The color is 0-1 not 16-bit
             // Fucked me over for a while...
-            Color healthColor = new Color(1 - healthChange, healthChange, 0, statAlpha);
+            // First set the red to max and then proceed to lower the green value to get a transition from green-yellow-red
+            Color healthColor = Color.Lerp(Color.green, Color.red, 1 - healthChange);
+            healthColor.a = statAlpha; // Set the alpha
+            //Color healthColor = new Color(1 - healthChange, 1 * Mathf.healthChange, 0, statAlpha);
             bodyPart.color = healthColor;
         }
     }

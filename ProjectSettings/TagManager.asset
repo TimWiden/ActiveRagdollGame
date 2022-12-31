@@ -14,7 +14,7 @@ TagManager:
   - NoSelfCollisions
   - HUDPostProcessing
   - Cockpit
-  - 
+  - PilotCamera
   - 
   - 
   - 

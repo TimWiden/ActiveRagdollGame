@@ -154,6 +154,92 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6f7547123da0ed74592e1b21bd0c7178, type: 3}
   - {fileID: 8300000, guid: 10ef57ec10082324a800a4391e7fa905, type: 3}
   - {fileID: 8300000, guid: ba407c5dec8ddf5499008d2884554dc1, type: 3}
+--- !u!1 &473406812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473406813}
+  - component: {fileID: 473406815}
+  - component: {fileID: 473406814}
+  m_Layer: 8
+  m_Name: CockpitCover (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &473406813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473406812}
+  m_LocalRotation: {x: 0.00000014106499, y: 8.881784e-16, z: 3.2567443e-16, w: 1}
+  m_LocalPosition: {x: -0.000000006437302, y: -0.47690824, z: 0.032933895}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2173589572523944448}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &473406815
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473406812}
+  m_Mesh: {fileID: 7107052628398257091, guid: cd7f30f969da44546b67c9d68be4bbaf, type: 3}
+--- !u!23 &473406814
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473406812}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 07aceed3e76151d4db3f33b74df97fde, type: 2}
+  - {fileID: 2100000, guid: 07aceed3e76151d4db3f33b74df97fde, type: 2}
+  - {fileID: 2100000, guid: 07aceed3e76151d4db3f33b74df97fde, type: 2}
+  - {fileID: 2100000, guid: 07aceed3e76151d4db3f33b74df97fde, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &507781408
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507781409}
   - component: {fileID: 507781410}
+  - component: {fileID: 1495151727}
   m_Layer: 5
   m_Name: HUD-PostProcessing
   m_TagString: Untagged
@@ -198,7 +285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 507781408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -208,6 +295,23 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1495151727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507781408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 359d00191f7a82a4a8adce8c5a6c1aa6, type: 2}
 --- !u!1 &531577652
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853134622}
   - component: {fileID: 853134619}
-  - component: {fileID: 853134620}
+  - component: {fileID: 1482699930}
   m_Layer: 5
   m_Name: HUD-Camera
   m_TagString: Untagged
@@ -528,7 +632,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0.1
+  m_Depth: 5
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 32
@@ -536,14 +640,14 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &853134620
+--- !u!114 &1482699930
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,57 +656,122 @@ MonoBehaviour:
   m_GameObject: {fileID: 853134618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 853134622}
-  volumeLayer:
+  clearColorMode: 2
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
     serializedVersion: 2
     m_Bits: 32
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 1
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 1
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 72198260625768269
+      data2: 13763000477350330392
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 8
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
 --- !u!1 &1015567083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655365538}
-  - component: {fileID: 1655365539}
+  - component: {fileID: 539298552}
   m_Layer: 8
   m_Name: CockpitPostProcessing
   m_TagString: Untagged
@@ -1081,23 +1250,23 @@ Transform:
   m_Father: {fileID: 8182974309133146870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1655365539
+--- !u!114 &539298552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655365537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 26848d1dd30acfa4c8e3ad017c55c4f1, type: 2}
-  isGlobal: 1
+  m_IsGlobal: 1
+  priority: 10
   blendDistance: 0
   weight: 1
-  priority: 0
+  sharedProfile: {fileID: 11400000, guid: 16432bac77ae8594f9848bccd7babafd, type: 2}
 --- !u!1 &1731505430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   firePoint: {fileID: 2116599707}
-  damage: 10
+  damage: 100
   maxDistance: 100
   laserDuration: 0.1
 --- !u!120 &1731505436
@@ -1334,9 +1503,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1939508380}
   - component: {fileID: 1939508379}
-  - component: {fileID: 1939508381}
-  m_Layer: 7
-  m_Name: HUDPostProcessing
+  - component: {fileID: 539298550}
+  m_Layer: 9
+  m_Name: PilotCameraPostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1364,7 +1533,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939508378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
@@ -1374,19 +1543,23 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
---- !u!65 &1939508381
-BoxCollider:
+--- !u!114 &539298550
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939508378}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 652cf73d16f8b884eaa6e519eb257a50, type: 2}
 --- !u!1 &2024355384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,6 +2126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -2261,7 +2435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMulti: 10
+  debug: 1
+  damageMulti: 0.5
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1390704257237271652
@@ -2437,7 +2612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftWeapon: {fileID: 1731505431}
   rightWeapon: {fileID: 0}
-  animatorCopyAnim: {fileID: 0}
+  animatorCopyAnim: {fileID: 8182974308228735510}
 --- !u!114 &9196668895583320230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,7 +2625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db6cc1b449a31246a3d163f231b83fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMultiplier: 10
+  healthMultiplier: 3
 --- !u!1 &1486650765431535555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,6 +2882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -3285,6 +3461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -3511,6 +3688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -3874,6 +4052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -4517,6 +4696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -4762,6 +4942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -5064,6 +5245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -5310,6 +5492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -5518,6 +5701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -5733,6 +5917,7 @@ GameObject:
   - component: {fileID: 8182974308336666774}
   - component: {fileID: 8182974308336666773}
   - component: {fileID: 78642917}
+  - component: {fileID: 127701352}
   m_Layer: 0
   m_Name: jo_LeftToeBase
   m_TagString: Untagged
@@ -5809,6 +5994,22 @@ MonoBehaviour:
   health: 100
   destroyOnDeath: 0
   currentHealth: 0
+--- !u!114 &127701352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4641549870545841722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  damageMulti: 10
+  minimumImpactThreshold: 0
+  lastFrameVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &4775607907361801099
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -6322,6 +6524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -6793,6 +6996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -6872,6 +7076,7 @@ GameObject:
   - component: {fileID: 8182974307616480677}
   - component: {fileID: 8182974307616480676}
   - component: {fileID: 306243676}
+  - component: {fileID: 2059477778}
   m_Layer: 0
   m_Name: jo_RightToeBase
   m_TagString: Untagged
@@ -6948,6 +7153,22 @@ MonoBehaviour:
   health: 100
   destroyOnDeath: 0
   currentHealth: 0
+--- !u!114 &2059477778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503112268401577135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  damageMulti: 10
+  minimumImpactThreshold: 0
+  lastFrameVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &6842973451045478267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,6 +7503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
@@ -7492,7 +7714,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f451207005d917c48b9610a4ccb3eb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageMulti: 10
+  debug: 1
+  damageMulti: 0.5
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &7756610073137514210
@@ -7903,7 +8126,7 @@ GameObject:
   - component: {fileID: 8182974308368128184}
   - component: {fileID: 8182974308368128191}
   - component: {fileID: 8182974308368128190}
-  - component: {fileID: 8182974308368128185}
+  - component: {fileID: 539298551}
   m_Layer: 0
   m_Name: MechCamera
   m_TagString: MainCamera
@@ -7956,16 +8179,16 @@ Camera:
   field of view: 70
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 255
+    m_Bits: 639
   m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -7979,7 +8202,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8182974308368128189}
   m_Enabled: 1
---- !u!114 &8182974308368128185
+--- !u!114 &539298551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7988,57 +8211,122 @@ MonoBehaviour:
   m_GameObject: {fileID: 8182974308368128189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 8182974308368128184}
-  volumeLayer:
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 128
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 2
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+    m_Bits: 513
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 1
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 1
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  hasPersistentHistory: 0
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 72198260625768269
+      data2: 13763000477350330392
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 8
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
 --- !u!1 &8182974309016620114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,7 +8418,8 @@ GameObject:
   - component: {fileID: 8182974309133146864}
   - component: {fileID: 8182974309133146866}
   - component: {fileID: 8182974309133146865}
-  - component: {fileID: 7626614945549213703}
+  - component: {fileID: 3059132712811788273}
+  - component: {fileID: 539298553}
   m_Layer: 0
   m_Name: CockpitCameraPOV
   m_TagString: Untagged
@@ -8163,7 +8452,7 @@ Camera:
   m_GameObject: {fileID: 8182974309133146869}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -8177,12 +8466,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 2
   field of view: 65
   orthographic: 0
   orthographic size: 5
-  m_Depth: 1
+  m_Depth: 10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -8190,8 +8479,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -8309,7 +8598,7 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 6
   m_ConnectedMassScale: 1
---- !u!114 &7626614945549213703
+--- !u!114 &3059132712811788273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8318,57 +8607,247 @@ MonoBehaviour:
   m_GameObject: {fileID: 8182974309133146869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 8182974309133146870}
-  volumeLayer:
+  clearColorMode: 2
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 256
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 1
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 72198260625768269
+      data2: 13763000477350330392
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 8
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+--- !u!114 &539298553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8182974309133146869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearColorMode: 2
+  backgroundColorHDR: {r: 1, g: 1, b: 1, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 257
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 1
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 72198260625735501
+      data2: 13763000477350330392
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 8
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
 --- !u!1 &8182974309288612955
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,6 +9218,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: cd7f30f969da44546b67c9d68be4bbaf, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389278464458031469, guid: cd7f30f969da44546b67c9d68be4bbaf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8389278464458031469, guid: cd7f30f969da44546b67c9d68be4bbaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7f30f969da44546b67c9d68be4bbaf, type: 3}

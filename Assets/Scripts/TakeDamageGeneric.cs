@@ -9,7 +9,7 @@ public class TakeDamageGeneric : MonoBehaviour
 
     [HideInInspector] public float currentHealth;
 
-    public void Awake()
+    public virtual void Start()
     {
         currentHealth = health;
     }
