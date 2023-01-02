@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2147.7812, g: 2473.0938, b: 3015.3984, a: 1}
+  m_IndirectSpecularColor: {r: 479.437, g: 412.5611, b: 340.79456, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -228,6 +228,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43742222, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 127701352, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 184369345, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 190591156, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 319040022, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 434687206, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 512066740, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 630604779, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 731138913, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1159657530, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1445884490, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1593933209, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1614078205, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1650605310, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1660747720, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1769506686, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1949703141, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 2059477778, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1484367034811556646, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Name
       value: LegionV1
@@ -404,10 +476,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43742222, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 127701352, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 127701352, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 184369345, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
@@ -416,10 +496,22 @@ PrefabInstance:
       propertyPath: damageMulti
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 184369345, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 184369345, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: minimumImpactThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 190591156, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 190591156, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 288927430, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: legRig
       value: 
@@ -428,14 +520,30 @@ PrefabInstance:
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 319040022, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 434687206, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 434687206, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 512066740, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 630604779, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 630604779, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 731138913, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
@@ -443,6 +551,14 @@ PrefabInstance:
     - target: {fileID: 731138913, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: damageMulti
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 731138913, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 731138913, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: minimumImpactThreshold
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 853134619, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Depth
@@ -460,6 +576,10 @@ PrefabInstance:
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1159657530, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1214465026, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: bodyPart
       value: 
@@ -468,6 +588,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1445884490, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1581008188, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Type
       value: 3
@@ -476,26 +600,54 @@ PrefabInstance:
       propertyPath: m_FillMethod
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1593933209, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
+    - target: {fileID: 1614078205, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1650605310, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1650605310, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1660747720, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: debug
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1660747720, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1731505430, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1769506686, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 1949703141, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1949703141, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 2059477778, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2059477778, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+      propertyPath: contactParticleEffect
+      value: 
+      objectReference: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
     - target: {fileID: 791918863130593138, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
       propertyPath: m_Layer
       value: 0

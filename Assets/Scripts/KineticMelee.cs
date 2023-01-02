@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Ment to calculate the kintetic energy behind a hit and inflict a certain damage based off the energy.
-// Does not check the angular velocity when calculating the forces
 public class KineticMelee : MonoBehaviour
 {
     public bool debug = false;
@@ -14,9 +13,28 @@ public class KineticMelee : MonoBehaviour
 
     Rigidbody rb;
 
+    [HideInInspector] public Vector3 contactPoint, contactNormal;
+
+
+    public bool useAudio = true;
+    ParticleSystemReference particleSys;
+    AudioSource audioSource;
+
+
+    public ParticleSystem contactParticleEffect;
+    private ParticleSystem particle; // The instance of the particle effect
+    private float initialEmission; // variable that saves the original emission rate
+    private float standstillGive = 0.1f;
+    public float contactParticleMultiplier = 0.1f;
+    [Range(1, 5)] public float minmaxContactParticleMultiplier = 3;
+    private float initialEmissionAngle;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        particleSys = GameObject.Find("ParticleSystemReference").GetComponent<ParticleSystemReference>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.spatialBlend = 1;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,9 +52,9 @@ public class KineticMelee : MonoBehaviour
 
 
 
+        contactPoint = collision.GetContact(0).point;
 
-
-        Vector3 contactNormal = collision.GetContact(0).normal;
+        contactNormal = collision.GetContact(0).normal;
         Vector3 impulse = collision.impulse;
 
         // Both bodies see the same impulse. Flip it for one of the bodies.
@@ -87,7 +105,73 @@ public class KineticMelee : MonoBehaviour
             }
 
             takeDamage.TakeDamage(damage * damageMulti);
+
+            /*
+            if(takeDamage.currentHealth)
+            {
+
+            }*/
         }
+    }
+
+    // Add in particle effects like sparks
+    private void OnCollisionStay(Collision collision)
+    {
+        Vector3 newContactPoint = collision.GetContact(0).point;
+        // Use the relative velocity to determine the particle effects scale
+        Vector3 scrapingVel = collision.relativeVelocity;
+
+        // Check if an instance of a particle effect doesn't exist, if it doesn't then instantiate a new one
+        if(particle == null)
+        {
+            particle = Instantiate(contactParticleEffect, newContactPoint, Quaternion.identity);
+            initialEmission = particle.emission.rateOverTimeMultiplier;
+            initialEmissionAngle = particle.shape.angle;
+        }
+
+        var emission = particle.emission;
+        var shape = particle.shape;
+        if (scrapingVel.magnitude < standstillGive) // if the two touching objects aren't moving against each other then don't show the particle effect
+        {
+            emission.rateOverTimeMultiplier = 0;
+            if(useAudio) audioSource.Stop();
+        }
+        else
+        {
+            if(useAudio)
+            {
+                audioSource.clip = particleSys.screach;
+                if(audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
+            }
+            
+
+            float speedMultiplier = Mathf.Clamp(scrapingVel.magnitude * contactParticleMultiplier, 1 / minmaxContactParticleMultiplier, minmaxContactParticleMultiplier);
+            emission.rateOverTimeMultiplier = initialEmission * speedMultiplier;
+            shape.angle = initialEmissionAngle * speedMultiplier;
+        }
+
+        particle.transform.position = newContactPoint;
+
+        // The particle effect's normal direction will be equal to that calculated direction
+        // Set the particles facing direction to the angle to the contact normal
+        particle.transform.LookAt(contactPoint);
+
+        // particle.startSize
+
+        // Now update the contact point
+        // Set the old position to the current position, that way next time this function loops that position will become the previous position.
+        contactPoint = newContactPoint;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (useAudio) audioSource.Stop();
+        // now turn off the looping of the instantiated particle effect, that way it will destroy itself later
+        var main = particle.main;
+        main.loop = false;
     }
 
     /*
