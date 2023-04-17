@@ -568,7 +568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &697022927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -700,6 +700,9 @@ MonoBehaviour:
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
+  contactPoint: {x: 0, y: 0, z: 0}
+  contactNormal: {x: 0, y: 0, z: 0}
+  useAudio: 1
   contactParticleEffect: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
   contactParticleMultiplier: 0.1
   minmaxContactParticleMultiplier: 3
@@ -819,6 +822,9 @@ MonoBehaviour:
   damageMulti: 10
   minimumImpactThreshold: 0
   lastFrameVelocity: {x: 0, y: 0, z: 0}
+  contactPoint: {x: 0, y: 0, z: 0}
+  contactNormal: {x: 0, y: 0, z: 0}
+  useAudio: 1
   contactParticleEffect: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
   contactParticleMultiplier: 0.01
   minmaxContactParticleMultiplier: 3
@@ -1014,3 +1020,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -5, y: 0, z: 0}
+--- !u!1 &1611751836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611751838}
+  - component: {fileID: 1611751837}
+  m_Layer: 0
+  m_Name: ParticleSystemReference
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1611751837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611751836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22585d6fa5714294ab0f84b83efc7665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screach: {fileID: 8300000, guid: e089e9d3304509743ba78bb5d7908b75, type: 3}
+  sys1HealthPerc: 0.75
+  sys2HealthPerc: 0.5
+  sys3HealthPerc: 0.25
+  healthEffectMultiplier: 3
+  particleSystem1: {fileID: 4553185051358865640, guid: 0b68cee65b531de498b6bb61686e1fd0, type: 3}
+  particleSystem2: {fileID: 8363442434026203414, guid: 46f4533e57aa5574f99552f48cd3b2bf, type: 3}
+  particleSystem3: {fileID: 4553185051358865640, guid: 174424258b9e8da479e512d06308d503, type: 3}
+--- !u!4 &1611751838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611751836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.051292837, y: 3.8969574, z: 0.123610735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

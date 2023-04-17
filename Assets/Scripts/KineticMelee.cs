@@ -20,7 +20,7 @@ public class KineticMelee : MonoBehaviour
     ParticleSystemReference particleSys;
     AudioSource audioSource;
 
-
+    public bool useParticle = true;
     public ParticleSystem contactParticleEffect;
     private ParticleSystem particle; // The instance of the particle effect
     private float initialEmission; // variable that saves the original emission rate
@@ -83,10 +83,10 @@ public class KineticMelee : MonoBehaviour
         // Makes sure the damage is positive so that it doesn't end up healing instead
         float damage = Mathf.Max(0f, otherObject - thisObject);
 
+
         // If the damage is below this threshold then ignore inflicting damage
         // Basically makes it ignore light hits and scratches
         if (damage < minimumImpactThreshold) return;
-
 
         TakeDamageGeneric takeDamage = GetComponent<TakeDamageGeneric>();
         if(takeDamage != null)
@@ -105,73 +105,76 @@ public class KineticMelee : MonoBehaviour
             }
 
             takeDamage.TakeDamage(damage * damageMulti);
-
-            /*
-            if(takeDamage.currentHealth)
-            {
-
-            }*/
         }
     }
 
     // Add in particle effects like sparks
     private void OnCollisionStay(Collision collision)
     {
-        Vector3 newContactPoint = collision.GetContact(0).point;
-        // Use the relative velocity to determine the particle effects scale
-        Vector3 scrapingVel = collision.relativeVelocity;
+        //Debug.Log("Staying" + gameObject.name);
 
-        // Check if an instance of a particle effect doesn't exist, if it doesn't then instantiate a new one
-        if(particle == null)
+        if (useParticle)
         {
-            particle = Instantiate(contactParticleEffect, newContactPoint, Quaternion.identity);
-            initialEmission = particle.emission.rateOverTimeMultiplier;
-            initialEmissionAngle = particle.shape.angle;
-        }
+            Vector3 newContactPoint = collision.GetContact(0).point;
+            // Use the relative velocity to determine the particle effects scale
+            Vector3 scrapingVel = collision.relativeVelocity;
 
-        var emission = particle.emission;
-        var shape = particle.shape;
-        if (scrapingVel.magnitude < standstillGive) // if the two touching objects aren't moving against each other then don't show the particle effect
-        {
-            emission.rateOverTimeMultiplier = 0;
-            if(useAudio) audioSource.Stop();
-        }
-        else
-        {
-            if(useAudio)
+            // Check if an instance of a particle effect doesn't exist, if it doesn't then instantiate a new one
+            if(particle == null)
             {
-                audioSource.clip = particleSys.screach;
-                if(audioSource.isPlaying)
-                {
-                    audioSource.Play();
-                }
+                particle = Instantiate(contactParticleEffect, newContactPoint, Quaternion.identity);
+                initialEmission = particle.emission.rateOverTimeMultiplier;
+                initialEmissionAngle = particle.shape.angle;
             }
+
+            var emission = particle.emission;
+            var shape = particle.shape;
+            if (scrapingVel.magnitude < standstillGive) // if the two touching objects aren't moving against each other then don't show the particle effect
+            {
+                emission.rateOverTimeMultiplier = 0;
+                if(useAudio) audioSource.Stop();
+            }
+            else
+            {
+                if(useAudio)
+                {
+                    audioSource.clip = particleSys.screach;
+                    if(audioSource.isPlaying)
+                    {
+                        audioSource.Play();
+                    }
+                }
             
 
-            float speedMultiplier = Mathf.Clamp(scrapingVel.magnitude * contactParticleMultiplier, 1 / minmaxContactParticleMultiplier, minmaxContactParticleMultiplier);
-            emission.rateOverTimeMultiplier = initialEmission * speedMultiplier;
-            shape.angle = initialEmissionAngle * speedMultiplier;
-        }
+                float speedMultiplier = Mathf.Clamp(scrapingVel.magnitude * contactParticleMultiplier, 1 / minmaxContactParticleMultiplier, minmaxContactParticleMultiplier);
+                emission.rateOverTimeMultiplier = initialEmission * speedMultiplier;
+                shape.angle = initialEmissionAngle * speedMultiplier;
+            }
 
-        particle.transform.position = newContactPoint;
+            particle.transform.position = newContactPoint;
 
-        // The particle effect's normal direction will be equal to that calculated direction
-        // Set the particles facing direction to the angle to the contact normal
-        particle.transform.LookAt(contactPoint);
+            // The particle effect's normal direction will be equal to that calculated direction
+            // Set the particles facing direction to the angle to the contact normal
+            particle.transform.LookAt(contactPoint);
 
-        // particle.startSize
+            // particle.startSize
 
-        // Now update the contact point
-        // Set the old position to the current position, that way next time this function loops that position will become the previous position.
-        contactPoint = newContactPoint;
+            // Now update the contact point
+            // Set the old position to the current position, that way next time this function loops that position will become the previous position.
+            contactPoint = newContactPoint;
+        }       
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (useAudio) audioSource.Stop();
-        // now turn off the looping of the instantiated particle effect, that way it will destroy itself later
-        var main = particle.main;
-        main.loop = false;
+
+        if(useParticle && particle != null)
+        {
+            // now turn off the looping of the instantiated particle effect, that way it will destroy itself later
+            var main = particle.main;
+            main.loop = false;
+        }    
     }
 
     /*
