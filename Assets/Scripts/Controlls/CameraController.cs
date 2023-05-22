@@ -22,6 +22,13 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        // If this is not the local player game object then don't take input
+        if (PlayerManagerCS.LocalPlayerInstance != transform.root.gameObject)
+        {
+            return;
+        }
+
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 

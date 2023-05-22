@@ -2067,6 +2067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LegionV1 Walker
       objectReference: {fileID: 0}
+    - target: {fileID: 8387011320570166189, guid: a78e1154fb61cea4ab565a8ccc76c7f0, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8780596102565077081, guid: a78e1154fb61cea4ab565a8ccc76c7f0, type: 3}
       propertyPath: m_RootOrder
       value: 17

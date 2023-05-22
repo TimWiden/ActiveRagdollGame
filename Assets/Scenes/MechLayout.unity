@@ -940,7 +940,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 815901125}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769014548}
+        m_TargetAssemblyTypeName: Launcher, Assembly-CSharp
+        m_MethodName: Connect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &815901125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,7 +1006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &899952944
 Transform:
   m_ObjectHideFlags: 0
@@ -2233,6 +2245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 853134621, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
+    - {fileID: 9196668895583320230, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 07fc4de5ab348204b8354405f95fb1ba, type: 3}
 --- !u!4 &2111525891 stripped
 Transform:

@@ -4,13 +4,12 @@ using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
 
+/// <summary>
+/// The script which manages most of the player's syncing with photon
+/// </summary>
 public class PlayerManagerCS : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region Fields 
-
-    Rigidbody rb;
-
-    [SerializeField] float MovementSpeed = 1;
 
     Animator anim;
 
@@ -20,7 +19,11 @@ public class PlayerManagerCS : MonoBehaviourPunCallbacks, IPunObservable
     [Tooltip("The player's UI GameObject Prefab")]
     public GameObject PlayerUIPrefab;
 
-    public float Health = 100f;
+    [Tooltip("All of the body parts in the player gets multiplied by this value")]
+    public float healthMultiplier = 1;
+    TakeDamageGeneric[] limbs;
+
+    public GameObject Camera;
 
     #endregion
 
@@ -33,14 +36,25 @@ public class PlayerManagerCS : MonoBehaviourPunCallbacks, IPunObservable
             Debug.Log("Writing to stream");
             // We own this player: send the others our data
             // stream.SendNext writes to the serialized variable
-            stream.SendNext(Health);
+            //stream.SendNext(Health);
+
+            // For every health component in the heirarchy, write their health value to the server
+            foreach (TakeDamageGeneric healthComp in limbs)
+            {
+                stream.SendNext(healthComp.currentHealth);
+            }
         }
         else
         {
             Debug.Log("Reading stream");
             // Network player, receive data
             // stream.ReceiveNext reads the variable
-            Health = (float)stream.ReceiveNext();
+            //Health = (float)stream.ReceiveNext();
+
+            foreach (TakeDamageGeneric healthComp in limbs)
+            {
+                healthComp.currentHealth = (float)stream.ReceiveNext();
+            }
         }
     }
 
@@ -48,20 +62,37 @@ public class PlayerManagerCS : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Awake()
     {
-        // Keeps track of the local player instance to prevent instantiation when levels are synchronized
-        if(photonView.IsMine)
-        {
-            PlayerManagerCS.LocalPlayerInstance = gameObject;
-        }
         // When levels are loaded the player instance does not get destroyed and thus does not require the game manager to reinstantiate
         DontDestroyOnLoad(gameObject);
+
+
+        // Make an array with all of the player's mechs limbs and their health components
+        limbs = GetComponentsInChildren<TakeDamageGeneric>();
+
+        foreach (TakeDamageGeneric healthComp in limbs)
+        {
+            healthComp.health *= healthMultiplier;
+        }
+
+        // If this is not the local player instance 
+        if (!photonView.IsMine && PhotonNetwork.IsConnected)
+        {
+            Destroy(GetComponent<CameraController>());
+            Destroy(GetComponent<MechController>());
+            Destroy(GetComponent<Attack>());
+
+            Debug.LogFormat("[0] is not the local player instance", gameObject.name);
+
+            return;
+        }
+        // Keeps track of the local player instance to prevent instantiation when levels are synchronized
+        LocalPlayerInstance = gameObject;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
 
         if(PlayerUIPrefab != null)
         {
@@ -78,49 +109,33 @@ public class PlayerManagerCS : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!photonView.IsMine)
-        {
-            return;
-        }
-
-        if(other.name.Contains("Sword"))
-        {
-            Debug.Log("Received damagae");
-
-            Health -= 10f;
-
-            if(Health <= 0 )
-            {
-                // Make the player leave the game room
-                GameManagerCScript.Instance.LeaveRoom();
-            }
-        }
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (photonView.IsMine)
+        {
+            Camera.SetActive(true);
+        }
+        else
+        {
+            Camera.SetActive(false);
+            print("Incorrect PhotonView");
+        }
+
+        /*
         // If this is not the local player instance 
         if (!photonView.IsMine && PhotonNetwork.IsConnected)
         {
             return;
-        }
+        }*/
+    }
 
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        Vector3 input = new(x, 0, y);
-
-        rb.MovePosition(transform.position + input * Time.deltaTime * MovementSpeed);
-
-        if (Input.GetMouseButton(0))
+    private void OnDrawGizmos()
+    {
+        if(LocalPlayerInstance == gameObject)
         {
-            // Attack
-            //anim.Play("SwordSwing");
-            anim.ResetTrigger("Attack");
-            anim.SetTrigger("Attack");
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(transform.position, 5);
         }
     }
 }

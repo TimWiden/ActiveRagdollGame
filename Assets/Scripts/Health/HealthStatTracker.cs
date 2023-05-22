@@ -11,9 +11,9 @@ public class HealthStatTracker : TakeDamageGeneric
     
     [Range(0, 1)] public float statAlpha = 0.75f, deathAlpha = 0.3f;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         // Resets the color of the HUD element body part to green
         bodyPart.color = new Color(0, 255, bodyPart.color.b);

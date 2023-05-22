@@ -54,7 +54,7 @@ public class IKFootCopy : MonoBehaviour
             // Also checks if the other foot or this foot is moving or not, if either of them are then don't
             if (Vector3.Distance(newPosition, hit.point) > stepDistance && !otherFoot.IsMoving() && !IsMoving()) // Should also add in a side step distance so that it takes steps more frequently if strafing
             {
-                //Debug.Log("Setting new foot placement");
+                Debug.Log("Setting new foot placement");
 
                 // Creates a variable that is defined based on an 'if' condition. If the ray hit position is greater than the newPosition's z-value then set the int to '1', if the statement returns false // the newPosition's z-value is greater, then return -1
                 //Transform.InverseTransformPoint gets the relative local transform from "Transform" to (overload)
@@ -125,6 +125,9 @@ public class IKFootCopy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(currentPosition, 1);
+
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(newPosition, 0.5f);
         Gizmos.DrawLine(hip.position + (hip.right * footSpacing), newPosition);

@@ -16378,7 +16378,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695435101272998704}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -16442,7 +16442,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -0.000000044703484, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -17024,6 +17024,7 @@ GameObject:
   - component: {fileID: 1695435100365487056}
   - component: {fileID: 9101854970245276608}
   - component: {fileID: 7352309987167268098}
+  - component: {fileID: 5653681552396835089}
   m_Layer: 0
   m_Name: jo_Reference
   m_TagString: Untagged
@@ -17158,6 +17159,29 @@ MonoBehaviour:
   rightArmRootJoint: {fileID: 7352309986594906387}
   leftLegRootJoint: {fileID: 7352309987453508929}
   rightLegRootJoint: {fileID: 7352309986772711171}
+--- !u!114 &5653681552396835089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850482351897078474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 2
+    Name: Punch
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
+  - SynchronizeType: 2
+    LayerIndex: 1
 --- !u!1 &2307522599892368787
 GameObject:
   m_ObjectHideFlags: 0
@@ -19241,7 +19265,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.07138921, z: 0.15309471}
+  m_ConnectedAnchor: {x: 1.3069508e-16, y: 0.07138918, z: 0.1530947}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -19450,6 +19474,7 @@ GameObject:
   - component: {fileID: 9101854971524207912}
   - component: {fileID: 9101854971524207915}
   - component: {fileID: 9101854971524207913}
+  - component: {fileID: 5794255875365298678}
   m_Layer: 0
   m_Name: jo_Reference
   m_TagString: Untagged
@@ -19558,6 +19583,24 @@ MonoBehaviour:
   - {fileID: 721099407523653755}
   - {fileID: 7818882352313394685}
   - {fileID: 3356379419044670192}
+--- !u!114 &5794255875365298678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935127552254707597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 0
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &5053203853450748699
 GameObject:
   m_ObjectHideFlags: 0
@@ -21850,7 +21893,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7352309987370439903}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 3
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -24144,7 +24187,6 @@ GameObject:
   - component: {fileID: 9101854971210361448}
   - component: {fileID: 7298262205175585448}
   - component: {fileID: 7352309987114883630}
-  - component: {fileID: 7352309988440144118}
   m_Layer: 0
   m_Name: jo_RightShoulder
   m_TagString: Untagged
@@ -24332,23 +24374,6 @@ MonoBehaviour:
   contactParticleEffect: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
   contactParticleMultiplier: 0.1
   minmaxContactParticleMultiplier: 3
---- !u!114 &7352309988440144118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7771972650930735944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0684d7cbd164fb46bcc3677bd9800a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  destroyOnDeath: 0
-  useParticleIndicators: 1
-  particleSizeMulti: 1
-  currentHealth: 0
 --- !u!1 &7847503234692385476
 GameObject:
   m_ObjectHideFlags: 0
@@ -24509,8 +24534,9 @@ GameObject:
   - component: {fileID: 9101854970804017379}
   - component: {fileID: 2882742800010433970}
   - component: {fileID: 7352309987892146644}
-  - component: {fileID: 1849157938052915555}
   - component: {fileID: 4475074358384367533}
+  - component: {fileID: 8387011320570166189}
+  - component: {fileID: 1613907310517444456}
   m_Layer: 0
   m_Name: LegionV1 Walker
   m_TagString: Untagged
@@ -24638,19 +24664,6 @@ MonoBehaviour:
   leftWeapon: {fileID: 2234589898885764623}
   rightWeapon: {fileID: 7352309988345140190}
   animatorCopyAnim: {fileID: 1695435100365487059}
---- !u!114 &1849157938052915555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8255415938697034467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db6cc1b449a31246a3d163f231b83fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthMultiplier: 3
 --- !u!114 &4475074358384367533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24663,9 +24676,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c32e68361c83c4d8a4f964db7a6b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 1
   PlayerUIPrefab: {fileID: 0}
-  Health: 100
+  healthMultiplier: 1
+  Camera: {fileID: 1695435100506964344}
+--- !u!114 &8387011320570166189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255415938697034467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 4475074358384367533}
+  - {fileID: 1613907310517444456}
+  - {fileID: 5794255875365298678}
+  - {fileID: 5653681552396835089}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1613907310517444456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255415938697034467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8262137208052887046
 GameObject:
   m_ObjectHideFlags: 0
@@ -26050,7 +26105,6 @@ GameObject:
   - component: {fileID: 9101854970080803734}
   - component: {fileID: 8969212404763850634}
   - component: {fileID: 7352309986805445587}
-  - component: {fileID: 7352309986681328573}
   m_Layer: 0
   m_Name: jo_LeftShoulder
   m_TagString: Untagged
@@ -26239,23 +26293,6 @@ MonoBehaviour:
   contactParticleEffect: {fileID: 8363442434026203414, guid: e32ce7ea0c6d6974ca8d9b8d09e7a908, type: 3}
   contactParticleMultiplier: 0.1
   minmaxContactParticleMultiplier: 3
---- !u!114 &7352309986681328573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9091032700472563314}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0684d7cbd164fb46bcc3677bd9800a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  destroyOnDeath: 0
-  useParticleIndicators: 1
-  particleSizeMulti: 1
-  currentHealth: 0
 --- !u!1 &9101854969693744228
 GameObject:
   m_ObjectHideFlags: 0

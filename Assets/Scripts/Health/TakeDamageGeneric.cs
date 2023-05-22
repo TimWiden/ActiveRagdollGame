@@ -7,7 +7,8 @@ public class TakeDamageGeneric : MonoBehaviour
     public float health = 100f;
     public bool destroyOnDeath;
 
-    ParticleSystemReference particleSys;
+    ParticleSystemReference PS;
+
     public bool useParticleIndicators = true;
     public float particleSizeMulti = 1f;
     ParticleSystem particle1, particle2, particle3;
@@ -16,13 +17,13 @@ public class TakeDamageGeneric : MonoBehaviour
 
     [HideInInspector] public float currentHealth;
 
-    public virtual void Start()
+    public virtual void Awake()
     {
         currentHealth = health;
 
-        hitScript = GetComponent<KineticMelee>();
+        PS = FindObjectOfType<ParticleSystemReference>();
 
-        particleSys = GameObject.Find("ParticleSystemReference").GetComponent<ParticleSystemReference>();
+        hitScript = GetComponent<KineticMelee>();
     }
 
     private void Update()
@@ -42,9 +43,9 @@ public class TakeDamageGeneric : MonoBehaviour
         {
             if(!particleSys1Active)
             {
-                if (currentHealth < health * particleSys.sys1HealthPerc) // Checks if the health has gone below the first damage indicator level
+                if (currentHealth < health * PS.sys1HealthPerc) // Checks if the health has gone below the first damage indicator level
                 {
-                    particle1 = Instantiate(particleSys.particleSystem1, hitScript.contactPoint, Quaternion.identity);
+                    particle1 = Instantiate(PS.particleSystem1, hitScript.contactPoint, Quaternion.identity);
                     particle1.transform.rotation = Quaternion.FromToRotation(particle1.transform.up, hitScript.contactNormal);
                     // Remember the scale in a variable
                     Vector3 scale = particle1.transform.lossyScale;
@@ -56,14 +57,14 @@ public class TakeDamageGeneric : MonoBehaviour
             }
             if(particleSys1Active)
             {
-                ParticleEffectStrength(particleSys.sys1HealthPerc, particleSys.particleSystem1, particle1); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
+                ParticleEffectStrength(PS.sys1HealthPerc, PS.particleSystem1, particle1); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
             }
 
             if (!particleSys2Active)
             {
-                if (currentHealth < health * particleSys.sys2HealthPerc) // Checks if the health has gone below the first damage indicator level
+                if (currentHealth < health * PS.sys2HealthPerc) // Checks if the health has gone below the first damage indicator level
                 {
-                    particle2 = Instantiate(particleSys.particleSystem2, hitScript.contactPoint, Quaternion.identity);
+                    particle2 = Instantiate(PS.particleSystem2, hitScript.contactPoint, Quaternion.identity);
                     particle2.transform.rotation = Quaternion.FromToRotation(particle2.transform.up, hitScript.contactNormal);
                     // Remember the scale in a variable
                     Vector3 scale = particle2.transform.lossyScale;
@@ -75,14 +76,14 @@ public class TakeDamageGeneric : MonoBehaviour
             }
             if (particleSys2Active)
             {
-                ParticleEffectStrength(particleSys.sys2HealthPerc, particleSys.particleSystem2, particle2); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
+                ParticleEffectStrength(PS.sys2HealthPerc, PS.particleSystem2, particle2); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
             }
 
             if (!particleSys3Active)
             {
-                if (currentHealth < health * particleSys.sys3HealthPerc) // Checks if the health has gone below the first damage indicator level
+                if (currentHealth < health * PS.sys3HealthPerc) // Checks if the health has gone below the first damage indicator level
                 {
-                    particle3 = Instantiate(particleSys.particleSystem3, hitScript.contactPoint, Quaternion.identity);
+                    particle3 = Instantiate(PS.particleSystem3, hitScript.contactPoint, Quaternion.identity);
                     particle3.transform.rotation = Quaternion.FromToRotation(particle3.transform.up, hitScript.contactNormal);
                     // Remember the scale in a variable
                     Vector3 scale = particle3.transform.lossyScale;
@@ -94,7 +95,7 @@ public class TakeDamageGeneric : MonoBehaviour
             }
             if (particleSys3Active)
             {
-                ParticleEffectStrength(particleSys.sys3HealthPerc, particleSys.particleSystem3, particle3); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
+                ParticleEffectStrength(PS.sys3HealthPerc, PS.particleSystem3, particle3); // if the particle effect is turned on then update the size of the effect according to how much health is remaining.
             }
         }
 
@@ -141,11 +142,11 @@ public class TakeDamageGeneric : MonoBehaviour
         //var shape = particle.shape;
 
         // Calculate the difference from the particle's spawning health threshold and the current health
-        float healthChangeMultiplier = Mathf.Clamp(health * sysHealthPerc / currentHealth, 1, particleSys.healthEffectMultiplier) * particleSizeMulti;
+        float healthChangeMultiplier = Mathf.Clamp(health * sysHealthPerc / currentHealth, 1, PS.healthEffectMultiplier) * particleSizeMulti;
         //Debug.Log(healthChangeMultiplier);
         
-        emission.rateOverTimeMultiplier = particleSystem.emission.rateOverTimeMultiplier / particleSys.healthEffectMultiplier * healthChangeMultiplier;
-        main.startSpeedMultiplier = particleSystem.main.startSpeedMultiplier / particleSys.healthEffectMultiplier * healthChangeMultiplier;
+        emission.rateOverTimeMultiplier = particleSystem.emission.rateOverTimeMultiplier / PS.healthEffectMultiplier * healthChangeMultiplier;
+        main.startSpeedMultiplier = particleSystem.main.startSpeedMultiplier / PS.healthEffectMultiplier * healthChangeMultiplier;
 
         //Debug.Log(emission.rateOverTimeMultiplier);
         //shape.angle = initialEmissionAngle * speedMultiplier;

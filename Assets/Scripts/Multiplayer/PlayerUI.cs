@@ -75,7 +75,7 @@ public class PlayerUI : MonoBehaviour
         if (playerHealthSlider != null)
         {
             //Debug.LogFormat("The health of {0} is {1}", targetPlayer.gameObject.name, targetPlayer.Health);
-            playerHealthSlider.value = targetPlayer.Health;
+            playerHealthSlider.value = targetPlayer.GetComponent<TakeDamageGeneric>().currentHealth;
         }
     }
 

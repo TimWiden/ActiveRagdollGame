@@ -15,6 +15,7 @@ public class GameManagerCScript : MonoBehaviourPunCallbacks
     [Tooltip("The prefab to use for representing the player")]
     public GameObject PlayerPrefab;
 
+
     private void Start()
     {
         Instance = this;

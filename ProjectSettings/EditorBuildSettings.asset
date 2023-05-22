@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MechLayout.unity
+    guid: c6a6bfbb08d2be74fa2956d81cfbae40
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerTestingGround.unity
+    guid: 011a5096ef4de564b8eb53aa0352e2e0
   m_configObjects: {}

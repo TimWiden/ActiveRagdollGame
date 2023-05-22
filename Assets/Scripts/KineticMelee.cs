@@ -15,9 +15,9 @@ public class KineticMelee : MonoBehaviour
 
     [HideInInspector] public Vector3 contactPoint, contactNormal;
 
+    ParticleSystemReference PS;
 
     public bool useAudio = true;
-    ParticleSystemReference particleSys;
     AudioSource audioSource;
 
     public bool useParticle = true;
@@ -29,10 +29,12 @@ public class KineticMelee : MonoBehaviour
     [Range(1, 5)] public float minmaxContactParticleMultiplier = 3;
     private float initialEmissionAngle;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        particleSys = GameObject.Find("ParticleSystemReference").GetComponent<ParticleSystemReference>();
+
+        PS = FindObjectOfType<ParticleSystemReference>();
+
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.spatialBlend = 1;
     }
@@ -60,6 +62,17 @@ public class KineticMelee : MonoBehaviour
         // Both bodies see the same impulse. Flip it for one of the bodies.
         if (Vector3.Dot(contactNormal, impulse) < 0f) // if the normal facing direction is negative then inverse the impulse
             impulse *= -1f;
+
+        if (rb == null)
+        {
+            Debug.LogFormat("Rigidbody component missing on gameobject {0}", gameObject.name);
+            rb = GetComponent<Rigidbody>();
+        }
+
+        if (rb == null)
+        {
+            Debug.LogFormat("Rigidbody component sitlllllllll missing on gameobject {0}", gameObject.name);
+        }
 
         Vector3 thisVelocity = rb.velocity - impulse / rb.mass;
 
@@ -138,7 +151,7 @@ public class KineticMelee : MonoBehaviour
             {
                 if(useAudio)
                 {
-                    audioSource.clip = particleSys.screach;
+                    audioSource.clip = PS.screach;
                     if(audioSource.isPlaying)
                     {
                         audioSource.Play();

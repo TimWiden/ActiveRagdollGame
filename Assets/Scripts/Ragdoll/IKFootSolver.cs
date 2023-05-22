@@ -70,6 +70,9 @@ public class IKFootSolver : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(currentPosition, 3);
+
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(newPosition, 0.05f);
         Gizmos.DrawRay(groundCheck);

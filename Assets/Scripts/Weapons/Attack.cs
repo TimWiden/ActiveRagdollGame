@@ -10,7 +10,14 @@ public class Attack : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.E))
+        // If this is not the local player game object then don't take input
+        if (PlayerManagerCS.LocalPlayerInstance != gameObject)
+        {
+            return;
+        }
+
+
+        if (Input.GetKey(KeyCode.E))
         {
             // Right side attack
             rightWeapon.Attack();
